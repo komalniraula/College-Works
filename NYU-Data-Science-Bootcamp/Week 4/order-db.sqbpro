@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/komalniraula/Desktop/Week 4/order-db.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="639"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="CUSTOMERS" custom_title="0" dock_id="1" table="4,9:mainCUSTOMERS"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000010100ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">-- Drop tables if they already exist
+DROP TABLE IF EXISTS SALES;
+DROP TABLE IF EXISTS CUSTOMERS;
+DROP TABLE IF EXISTS ITEMS;
+
+-- Create CUSTOMERS table
+CREATE TABLE CUSTOMERS (
+    customer_id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    address TEXT
+);
+
+-- Insert CUSTOMERS
+INSERT INTO CUSTOMERS VALUES (1, 'John', 'Doe', '123 Main St');
+INSERT INTO CUSTOMERS VALUES (2, 'Jane', 'Smith', '456 Oak Ave');
+INSERT INTO CUSTOMERS VALUES (3, 'Emily', 'Clark', '789 Pine Rd');
+INSERT INTO CUSTOMERS VALUES (4, 'Bob', 'Jones', '135 Elm St');
+
+-- Create ITEMS table
+CREATE TABLE ITEMS (
+    item_id INTEGER PRIMARY KEY,
+    item_name TEXT,
+    price REAL,
+    department TEXT
+);
+
+-- Insert ITEMS
+INSERT INTO ITEMS VALUES (1, 'Notebook', 5.00, 'Stationery');
+INSERT INTO ITEMS VALUES (2, 'Shampoo', 10.00, 'Personal Care');
+INSERT INTO ITEMS VALUES (3, 'Chocolate', 2.00, 'Snacks');
+INSERT INTO ITEMS VALUES (4, 'Marker', 3.00, 'Stationery');
+
+-- Create SALES table
+CREATE TABLE SALES (
+    date TEXT,
+    order_id INTEGER,
+    item_id INTEGER,
+    customer_id INTEGER,
+    quantity INTEGER,
+    revenue REAL
+);
+
+-- Insert SALES (15 rows)
+INSERT INTO SALES VALUES ('2023-03-18', 101, 1, 1, 2, 10.00);
+INSERT INTO SALES VALUES ('2023-03-18', 101, 2, 1, 1, 10.00);
+INSERT INTO SALES VALUES ('2023-03-18', 102, 2, 2, 1, 10.00);
+INSERT INTO SALES VALUES ('2023-03-18', 103, 3, 4, 5, 10.00);
+INSERT INTO SALES VALUES ('2023-01-05', 104, 1, 2, 4, 20.00);
+INSERT INTO SALES VALUES ('2023-01-15', 105, 2, 3, 2, 20.00);
+INSERT INTO SALES VALUES ('2023-01-25', 106, 3, 1, 10, 20.00);
+INSERT INTO SALES VALUES ('2022-02-14', 107, 1, 1, 10, 50.00);
+INSERT INTO SALES VALUES ('2022-06-20', 108, 2, 3, 10, 100.00);
+INSERT INTO SALES VALUES ('2022-09-12', 109, 3, 2, 50, 100.00);
+INSERT INTO SALES VALUES ('2022-12-01', 110, 4, 4, 10, 30.00);
+INSERT INTO SALES VALUES ('2023-02-01', 111, 2, 1, 10, 100.00);
+INSERT INTO SALES VALUES ('2023-02-01', 111, 1, 1, 20, 100.00);
+INSERT INTO SALES VALUES ('2023-02-10', 112, 4, 3, 2, 6.00);
+INSERT INTO SALES VALUES ('2022-03-18', 113, 3, 1, 10, 20.00);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
