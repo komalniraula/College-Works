@@ -1,0 +1,6 @@
+[submodule "Deep Learning/LiteResNet"]
+	path = Deep Learning/LiteResNet
+	url = https://github.com/komalniraula/LiteResNet
+[submodule "Deep Learning/finetuning_lora"]
+	path = Deep Learning/finetuning_lora
+	url = https://github.com/komalniraula/finetuning_lora
