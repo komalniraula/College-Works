@@ -4,3 +4,6 @@
 [submodule "Deep Learning/finetuning_lora"]
 	path = Deep Learning/finetuning_lora
 	url = https://github.com/komalniraula/finetuning_lora
+[submodule "Robo Advisors and Systematic Trading/ml-quant-eval"]
+	path = Robo Advisors and Systematic Trading/ml-quant-eval
+	url = https://github.com/komalniraula/ml-quant-eval
