@@ -1,0 +1,80 @@
+Datadet:
+
+
+1. 
+SELECT COUNT(DISTINCT s.order_id) AS total_orders_by_john_doe
+FROM SALES s
+JOIN CUSTOMERS c ON s.customer_id = c.customer_id
+WHERE s.date = '2023-03-18'
+  AND c.first_name = 'John'
+  AND c.last_name = 'Doe';
+
+Answer: 1
+
+2. 
+SELECT 
+    COUNT(DISTINCT customer_id) AS total_customers,
+    ROUND(SUM(revenue) * 1.0 / COUNT(DISTINCT customer_id), 2) AS avg_spend_per_customer
+FROM SALES
+WHERE date BETWEEN '2023-01-01' AND '2023-01-31';
+
+Answer:
+total_customers             avg_spend_per_customer
+3	                        20.0
+
+
+3. 
+SELECT i.department, SUM(s.revenue) AS total_revenue
+FROM SALES s
+JOIN ITEMS i ON s.item_id = i.item_id
+WHERE s.date BETWEEN '2022-01-01' AND '2022-12-31'
+GROUP BY i.department
+HAVING SUM(s.revenue) < 600;
+
+Answer:
+department      total_revenue
+Personal Care	100.0
+Snacks	        120.0
+Stationery	    80.0
+
+4.
+SELECT 
+    MAX(order_total) AS max_order_revenue,
+    MIN(order_total) AS min_order_revenue
+FROM (
+    SELECT order_id, SUM(revenue) AS order_total
+    FROM SALES
+    GROUP BY order_id
+);
+
+Answer:
+max_order_revenue           min_order_revenue
+200.0	                    6.0
+
+5. 
+-- Find the order_id with the highest revenue
+WITH order_totals AS (
+    SELECT order_id, SUM(revenue) AS total_revenue
+    FROM SALES
+    GROUP BY order_id
+),
+max_order AS (
+    SELECT order_id
+    FROM order_totals
+    ORDER BY total_revenue DESC
+    LIMIT 1
+)
+-- Show items in that order
+SELECT s.order_id, i.item_name, s.quantity, s.revenue
+FROM SALES s
+JOIN ITEMS i ON s.item_id = i.item_id
+WHERE s.order_id = (SELECT order_id FROM max_order);
+
+Answer:
+order_id    item_name   quantity    revenue
+111	        Shampoo	    10	        100.0
+111	        Notebook	20	        100.0
+
+
+
+
