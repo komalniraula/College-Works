@@ -19,7 +19,6 @@ Final project exploring adversarial attacks and vulnerabilities in deep learning
 
 - `project-3.ipynb`
 - `report.pdf`
-- `README.md`
 
 ---
 
@@ -35,7 +34,6 @@ Self-paced bootcamp projects covering weekly exercises and case studies from dat
 
 - `Week 1` to `Week 8`
 - `Spring 2025 Bootcamp Syllabus`
-- `README.md`
 
 ---
 
