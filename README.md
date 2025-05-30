@@ -55,6 +55,16 @@ My IMBA thesis focused on predicting the Nepal Stock Exchange (NEPSE) index usin
 
 ---
 
+### 📌 Robo Advisors and Systematic Trading (NYU)
+Explores the intersection of quantitative finance and machine learning. The project compares machine learning methods with traditional statistical techniques in systematic trading.
+
+#### 🔸 [ml-quant-eval](https://github.com/komalniraula/ml-quant-eval) *(submodule)*
+Codebase for evaluating ML vs stochastic methods for pair selection and trading signal generation.
+
+- `main_report_kn2505.pdf` — Final course report presenting methodology, implementation, and results.
+
+---
+
 ## 🧠 About Me
 
 I'm Komal Niraula, a graduate student passionate about applying machine learning to finance and real-world optimization problems.
